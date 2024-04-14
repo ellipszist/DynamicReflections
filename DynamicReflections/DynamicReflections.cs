@@ -99,6 +99,7 @@ namespace DynamicReflections
             monitor = Monitor;
             modHelper = helper;
             multiplayer = helper.Reflection.GetField<Multiplayer>(typeof(Game1), "multiplayer").GetValue();
+            modConfig = new ModConfig();
 
             // Load the managers
             apiManager = new ApiManager(monitor);
