@@ -110,7 +110,7 @@ namespace DynamicReflections.Framework.Utilities
                     Game1.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp);
 
                     // Draw the "Mirrors" layer
-                    LayerPatch.DrawReversePatch(mirrorsLayer, Game1.mapDisplayDevice, Game1.viewport, Location.Origin, wrapAround: false, 4);
+                    LayerPatch.DrawNormalReversePatch(mirrorsLayer, Game1.mapDisplayDevice, Game1.viewport, Location.Origin, 4);
                     Game1.spriteBatch.End();
                 }
             }
@@ -316,7 +316,7 @@ namespace DynamicReflections.Framework.Utilities
                     Game1.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp);
 
                     DynamicReflections.isFilteringSky = true;
-                    LayerPatch.DrawReversePatch(backLayer, Game1.mapDisplayDevice, Game1.viewport, Location.Origin, wrapAround: false, 4);
+                    LayerPatch.DrawNormalReversePatch(backLayer, Game1.mapDisplayDevice, Game1.viewport, Location.Origin, 4);
                     DynamicReflections.isFilteringSky = false;
 
                     Game1.spriteBatch.End();
@@ -329,7 +329,7 @@ namespace DynamicReflections.Framework.Utilities
                     Game1.spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.PointClamp);
 
                     DynamicReflections.isFilteringStar = true;
-                    LayerPatch.DrawReversePatch(backLayer, Game1.mapDisplayDevice, Game1.viewport, Location.Origin, wrapAround: false, 4);
+                    LayerPatch.DrawNormalReversePatch(backLayer, Game1.mapDisplayDevice, Game1.viewport, Location.Origin, 4);
                     DynamicReflections.isFilteringStar = false;
 
                     foreach (var skyEffect in DynamicReflections.skyManager.skyEffectSprites.ToList())
@@ -476,7 +476,7 @@ namespace DynamicReflections.Framework.Utilities
                     Game1.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp);
 
                     // Draw the "Back" layer with just the puddles
-                    LayerPatch.DrawReversePatch(backLayer, Game1.mapDisplayDevice, Game1.viewport, Location.Origin, wrapAround: false, 4);
+                    LayerPatch.DrawNormalReversePatch(backLayer, Game1.mapDisplayDevice, Game1.viewport, Location.Origin, 4);
 
                     Game1.spriteBatch.End();
                 }
