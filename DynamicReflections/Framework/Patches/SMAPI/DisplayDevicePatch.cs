@@ -28,8 +28,7 @@ namespace DynamicReflections.Framework.Patches.SMAPI
 
         internal void Apply(Harmony harmony)
         {
-            harmony.Patch(AccessTools.Method("StardewModdingAPI.Framework.Rendering.SDisplayDevice:DrawTile", new[] { typeof(Tile), typeof(xTile.Dimensions.Location), typeof(float) }), prefix: new HarmonyMethod(GetType(), nameof(DrawTilePrefix)));
-            harmony.Patch(AccessTools.Method("StardewModdingAPI.Framework.Rendering.SXnaDisplayDevice:DrawTile", new[] { typeof(Tile), typeof(xTile.Dimensions.Location), typeof(float) }), prefix: new HarmonyMethod(GetType(), nameof(DrawTilePrefix)));
+            harmony.Patch(AccessTools.Method("xTile.Display.XnaDisplayDevice:DrawTile", new[] { typeof(Tile), typeof(xTile.Dimensions.Location), typeof(float) }), prefix: new HarmonyMethod(GetType(), nameof(DrawTilePrefix)));
 
             // Perform PyTK related patches
             if (DynamicReflections.modHelper.ModRegistry.IsLoaded("Platonymous.Toolkit"))
